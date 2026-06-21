@@ -4,9 +4,8 @@ import requests
 
 # --- 1. KONFIGURASI LINK (WAJIB DIISI) ---
 LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
-BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
-URL_SIMPAN = "PASTE_LINK_APPS_SCRIPT_ANDA_DI_SINI"
-URL_BACA = "PASTE_LINK_GOOGLE_SHEETS_ANDA_DI_SINI"
+BANNER_URL = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec"
+URL_BACA = "https://docs.google.com/spreadsheets/d/1eBL-357PBj2LgpZfD-lBk-pcVSYHC_u8dZpethZqZwA/edit?usp=sharing"
 
 # --- 2. SETUP HALAMAN ---
 st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
