@@ -2,17 +2,20 @@ import streamlit as st
 import pandas as pd
 import requests
 
-# 1. PENGATURAN LOGO DAN BANNER
+# 1. PENGATURAN URL
 LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
 BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
 
-# Menampilkan Logo hanya sebagai ikon di pojok tab browser (TIDAK AKAN MUNCUL GANDA)
+# 2. PENGATURAN HALAMAN
+# page_icon ini akan menampilkan logo di tab browser, BUKAN di badan halaman.
 st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
 
-# Menampilkan Banner saja (karena di banner sudah ada logonya)
+# 3. MENAMPILKAN BANNER
+# Ini satu-satunya perintah untuk menampilkan gambar di badan halaman.
+# Jika logo GU masih muncul dua kali, berarti logo itu memang sudah menyatu di dalam file bannerGU.png.
 st.image(BANNER_URL, use_column_width=True)
 
-# ... (lanjutkan dengan kode form input data dan ringkasan data)
+# (Lanjutkan sisa kodingan form input dan tabel Anda di bawah sini...)
 
 # (Lanjutkan dengan kode form dan lainnya seperti biasa...)
 # Tempel Link URL Aplikasi Web (dari Apps Script) di sini:
