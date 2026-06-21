@@ -1,10 +1,14 @@
 [theme]
 base="light"
-# Warna Tosca yang lebih gelap/elegan
-primaryColor="#0d9488" 
-# Latar belakang putih dengan sedikit sentuhan abu-abu sangat muda
-backgroundColor="#f8fafc"
-# Warna kotak input/card
-secondaryBackgroundColor="#ffffff"
-# Warna teks biru gelap agar kontras
-textColor="#0f172a"
+
+# Warna Tosca asli dari logo GU Anda
+primaryColor="#00a89d" 
+
+# Background putih bersih untuk kesan bersih
+backgroundColor="#ffffff"
+
+# Latar belakang card/form (abu-abu sangat muda/kebiruan tipis)
+secondaryBackgroundColor="#f1f5f9"
+
+# Warna teks (Biru gelap dari teks logo GU)
+textColor="#011f4b"
