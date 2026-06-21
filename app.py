@@ -2,48 +2,51 @@ import streamlit as st
 import pandas as pd
 import requests
 
-# 1. PENGATURAN URL
-# Kita tetap menyimpan LOGO_URL untuk ikon tab browser, tapi tidak akan kita tampilkan di badan halaman
+# --- KONFIGURASI ---
 LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
 BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
 
-# 2. PENGATURAN HALAMAN
-# Logo hanya muncul sebagai ikon di tab browser (pojok atas)
-st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
-   st.markdown("""
-    <style>
-    /* Memberikan bingkai tipis berwarna Tosca pada kotak transaksi */
-    div[data-testid="stExpander"] {
-        border: 1px solid #00a89d !important;
-        border-radius: 15px;
-    }
-    </style>
-    """, unsafe_allow_html=True)     
-        # (Catatan: Pastikan Anda sudah mengisi URL_SIMPAN_DATA dan URL_BACA_DATA Anda di sini jika diperlukan)
+# Tempel link Apps Script & Google Sheets Anda di bawah:
+URL_SIMPAN_DATA = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec"
+URL_BACA_DATA = "https://docs.google.com/spreadsheets/d/1eBL-357PBj2LgpZfD-lBk-pcVSYHC_u8dZpethZqZwA/edit?usp=sharing"
 
-# 3. MENAMPILKAN BANNER
-# Hanya banner yang ditampilkan di badan halaman
+st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
+
+# --- CSS UNTUK TAMPILAN ---
+st.markdown("""
+    <style>
+    div[data-testid="stExpander"] { border: 2px solid #00a89d !important; border-radius: 15px; }
+    .stApp { background-color: #ffffff; }
+    </style>
+    """, unsafe_allow_html=True)
+
+# --- TAMPILAN ---
 st.image(BANNER_URL, use_column_width=True)
 
-# 4. FORM INPUT DATA
-st.markdown("---")
-with st.expander("➕ Tambah Transaksi Baru", expanded=True):
+st.markdown("### ➕ Tambah Transaksi Baru")
+with st.expander("Klik untuk isi data transaksi", expanded=True):
     with st.form("form_transaksi", clear_on_submit=True):
-        kol1, kol2, kol3, kol4 = st.columns(4)
+        c1, c2, c3, c4 = st.columns(4)
+        tgl = c1.date_input("Tanggal")
+        omzet = c2.number_input("Omzet (Rp)", min_value=0)
+        pengeluaran = c3.number_input("Pengeluaran (Rp)", min_value=0)
+        pelanggan = c4.number_input("Jumlah Pelanggan", min_value=0)
         
-        with kol1:
-            tgl = st.date_input("Tanggal")
-        with kol2:
-            omzet = st.number_input("Omzet (Rp)", min_value=0)
-        with kol3:
-            pengeluaran = st.number_input("Pengeluaran (Rp)", min_value=0)
-        with kol4:
-            pelanggan = st.number_input("Jumlah Pelanggan", min_value=0)
-            
-        tombol = st.form_submit_button("Simpan Data")
-    
+        if st.form_submit_button("Simpan Data"):
+            data = {"tanggal": str(tgl), "omzet": omzet, "pengeluaran": pengeluaran, "laba": omzet-pengeluaran, "pelanggan": pelanggan}
+            try:
+                requests.post(URL_SIMPAN_DATA, json=data)
+                st.success("Data berhasil disimpan!")
+            except:
+                st.error("Gagal menyimpan data.")
 
-
-# 5. RINGKASAN DATA
+st.markdown("---")
 st.subheader("📋 Ringkasan Data")
-# ... (lanjutkan sisa kode untuk menampilkan tabel dan grafik Anda)
+
+# Mengambil Data
+try:
+    if "edit" in URL_BACA_DATA: URL_BACA_DATA = URL_BACA_DATA.replace("/edit", "/export?format=csv")
+    df = pd.read_csv(URL_BACA_DATA)
+    st.dataframe(df, use_container_width=True)
+except:
+    st.info("Menunggu data...")
