@@ -6,11 +6,13 @@ import requests
 LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
 BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
 
-# Menampilkan Logo sebagai ikon browser
+# Menampilkan Logo hanya sebagai ikon di pojok tab browser (TIDAK AKAN MUNCUL GANDA)
 st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
 
-# Menampilkan Banner Utama
+# Menampilkan Banner saja (karena di banner sudah ada logonya)
 st.image(BANNER_URL, use_column_width=True)
+
+# ... (lanjutkan dengan kode form input data dan ringkasan data)
 
 # (Lanjutkan dengan kode form dan lainnya seperti biasa...)
 # Tempel Link URL Aplikasi Web (dari Apps Script) di sini:
