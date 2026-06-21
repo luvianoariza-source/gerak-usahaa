@@ -6,8 +6,8 @@ import requests
 # Ikuti instruksi pada bagian balasan untuk mendapatkan link ini.
 
 # Menggunakan link langsung dari repository GitHub Anda
-LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
-BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
+LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/blob/main/logoGU.png"
+BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/blob/main/bannerGU.png"
 
 # Pastikan bagian st.image di bawah ini sudah tertulis seperti ini:
 st.image(BANNER_URL, use_column_width=True)
