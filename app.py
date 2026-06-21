@@ -31,7 +31,16 @@ with st.expander("➕ Tambah Transaksi Baru", expanded=True):
             pelanggan = st.number_input("Jumlah Pelanggan", min_value=0)
             
         tombol = st.form_submit_button("Simpan Data")
-        
+    
+   st.markdown("""
+    <style>
+    /* Memberikan bingkai tipis berwarna Tosca pada kotak transaksi */
+    div[data-testid="stExpander"] {
+        border: 1px solid #00a89d !important;
+        border-radius: 15px;
+    }
+    </style>
+    """, unsafe_allow_html=True)     
         # (Catatan: Pastikan Anda sudah mengisi URL_SIMPAN_DATA dan URL_BACA_DATA Anda di sini jika diperlukan)
 
 # 5. RINGKASAN DATA
