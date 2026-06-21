@@ -9,12 +9,10 @@ import requests
 LOGO_URL = "https://github.com/luvianoariza-source/gerak-usahaa/blob/main/logoGU.png"
 
 # Tempel RAW GitHub URL untuk banner branding (image_2.png) Anda di sini:
-BANNER_URL = "https://github.com/luvianoariza-source/gerak-usahaa/blob/main/bannerGU.png
-"
+BANNER_URL = "https://github.com/luvianoariza-source/gerak-usahaa/blob/main/bannerGU.png"
 
 # Tempel Link URL Aplikasi Web (dari Apps Script) di sini:
-URL_SIMPAN_DATA = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec
-"
+URL_SIMPAN_DATA = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec"
 
 # Tempel Link Google Sheets (yang hak aksesnya Editor) di sini:
 URL_BACA_DATA = "https://docs.google.com/spreadsheets/d/1eBL-357PBj2LgpZfD-lBk-pcVSYHC_u8dZpethZqZwA/edit?usp=sharing"
