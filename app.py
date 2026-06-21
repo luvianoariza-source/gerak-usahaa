@@ -10,6 +10,16 @@ BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa
 # 2. PENGATURAN HALAMAN
 # Logo hanya muncul sebagai ikon di tab browser (pojok atas)
 st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
+   st.markdown("""
+    <style>
+    /* Memberikan bingkai tipis berwarna Tosca pada kotak transaksi */
+    div[data-testid="stExpander"] {
+        border: 1px solid #00a89d !important;
+        border-radius: 15px;
+    }
+    </style>
+    """, unsafe_allow_html=True)     
+        # (Catatan: Pastikan Anda sudah mengisi URL_SIMPAN_DATA dan URL_BACA_DATA Anda di sini jika diperlukan)
 
 # 3. MENAMPILKAN BANNER
 # Hanya banner yang ditampilkan di badan halaman
@@ -32,16 +42,7 @@ with st.expander("➕ Tambah Transaksi Baru", expanded=True):
             
         tombol = st.form_submit_button("Simpan Data")
     
-   st.markdown("""
-    <style>
-    /* Memberikan bingkai tipis berwarna Tosca pada kotak transaksi */
-    div[data-testid="stExpander"] {
-        border: 1px solid #00a89d !important;
-        border-radius: 15px;
-    }
-    </style>
-    """, unsafe_allow_html=True)     
-        # (Catatan: Pastikan Anda sudah mengisi URL_SIMPAN_DATA dan URL_BACA_DATA Anda di sini jika diperlukan)
+
 
 # 5. RINGKASAN DATA
 st.subheader("📋 Ringkasan Data")
