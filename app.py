@@ -3,12 +3,11 @@ import pandas as pd
 import requests
 
 # 1. PENGATURAN URL
-LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
 BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
 
 # 2. PENGATURAN HALAMAN
 # page_icon ini akan menampilkan logo di tab browser, BUKAN di badan halaman.
-st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
+st.set_page_config(page_title="Gerak Usaha"
 
 # 3. MENAMPILKAN BANNER
 # Ini satu-satunya perintah untuk menampilkan gambar di badan halaman.
