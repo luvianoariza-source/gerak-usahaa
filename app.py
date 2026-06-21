@@ -2,26 +2,42 @@ import streamlit as st
 import pandas as pd
 import requests
 
-st.set_page_config(page_title="Dashboard Bisnis", layout="wide")
+# === 1. TEMPEL SEMUA LINK ANDA DI SINI ===
+# Ikuti instruksi pada bagian balasan untuk mendapatkan link ini.
 
-# === 1. TEMPEL KEDUA LINK ANDA DI SINI ===
+# Tempel RAW GitHub URL untuk logo GU (image_3.png) Anda di sini:
+LOGO_URL = "https://github.com/luvianoariza-source/gerak-usahaa/blob/main/logoGU.png"
 
-# Tempel Link URL Aplikasi Web (dari Apps Script) di dalam tanda kutip di bawah:
-URL_SIMPAN_DATA = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec"
+# Tempel RAW GitHub URL untuk banner branding (image_2.png) Anda di sini:
+BANNER_URL = "https://github.com/luvianoariza-source/gerak-usahaa/blob/main/bannerGU.png
+"
 
-# Tempel Link Google Sheets (yang hak aksesnya Editor) di dalam tanda kutip di bawah:
-URL_BACA_DATA = "ttps://docs.google.com/spreadsheets/d/1eBL-357PBj2LgpZfD-lBk-pcVSYHC_u8dZpethZqZwA/edit?usp=sharing"
+# Tempel Link URL Aplikasi Web (dari Apps Script) di sini:
+URL_SIMPAN_DATA = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec
+"
 
-# (Mesin otomatis menyesuaikan link Google Sheets Anda)
+# Tempel Link Google Sheets (yang hak aksesnya Editor) di sini:
+URL_BACA_DATA = "https://docs.google.com/spreadsheets/d/1eBL-357PBj2LgpZfD-lBk-pcVSYHC_u8dZpethZqZwA/edit?usp=sharing"
+
+
+# (Mesin otomatis menyesuaikan link Google Sheets Anda - JANGAN DIUBAH)
 if "edit" in URL_BACA_DATA:
     URL_BACA_DATA = URL_BACA_DATA.replace("/edit?usp=sharing", "/export?format=csv")
     URL_BACA_DATA = URL_BACA_DATA.replace("/edit", "/export?format=csv")
 
 
-# === 2. PENGATURAN TAMPILAN UI ===
-st.title("📊 Aplikasi Pencatatan Bisnis")
+# === 2. PENGATURAN KONFIGURASI HALAMAN DAN TAMPILAN UI ===
 
-# UI Form Input Data
+# Mengubah logo aplikasi (ikon browser) dengan file logo.png Anda
+st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
+
+# Memasang Banner Sampul Aplikasinya (Gambar image_2.png) di paling atas
+st.image(BANNER_URL, use_column_width=True)
+
+# st.title("🏢 Gerak Usaha") # Menghapus title bawaan karena sudah ada di banner
+
+# UI Form Input Data (Sisa kode tidak berubah)
+st.markdown("---")
 with st.expander("➕ Tambah Transaksi Baru", expanded=True):
     with st.form("form_transaksi", clear_on_submit=True):
         kol1, kol2, kol3, kol4 = st.columns(4) # Membuat UI terbagi 4 kolom sejajar
@@ -56,7 +72,6 @@ with st.expander("➕ Tambah Transaksi Baru", expanded=True):
                 st.error("Gagal mengirim data. Periksa kembali link Apps Script Anda.")
 
 # === 3. UI TAMPILAN DATA & GRAFIK ===
-st.markdown("---")
 st.subheader("📋 Ringkasan Data")
 
 # Mengambil data dari Google Sheets untuk ditampilkan
