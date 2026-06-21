@@ -1,0 +1,15 @@
+[theme]
+# Mengatur agar tema dasarnya selalu terang
+base="light"
+
+# Warna utama (Cyan/Aqua dari logo)
+primaryColor="#16dbba"
+
+# Warna latar belakang utama aplikasi (Putih murni)
+backgroundColor="#ffffff"
+
+# Warna latar belakang area form (Sangat cerah dengan sentuhan cyan)
+secondaryBackgroundColor="#e6fcf9"
+
+# Warna teks utama (Biru dongker dari teks logo)
+textColor="#011f4b"
