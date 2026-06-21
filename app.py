@@ -5,11 +5,12 @@ import requests
 # === 1. TEMPEL SEMUA LINK ANDA DI SINI ===
 # Ikuti instruksi pada bagian balasan untuk mendapatkan link ini.
 
-# Tempel RAW GitHub URL untuk logo GU (image_3.png) Anda di sini:
-LOGO_URL = "https://github.com/luvianoariza-source/gerak-usahaa/blob/main/logoGU.png"
+# Menggunakan link langsung dari repository GitHub Anda
+LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
+BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
 
-# Tempel RAW GitHub URL untuk banner branding (image_2.png) Anda di sini:
-BANNER_URL = "https://github.com/luvianoariza-source/gerak-usahaa/blob/main/bannerGU.png"
+# Pastikan bagian st.image di bawah ini sudah tertulis seperti ini:
+st.image(BANNER_URL, use_column_width=True)
 
 # Tempel Link URL Aplikasi Web (dari Apps Script) di sini:
 URL_SIMPAN_DATA = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec"
