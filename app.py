@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Konfigurasi
-URL_BACA = "PASTE_LINK_CSV_HASIL_PUBLISH_TO_WEB_DISINI"
+URL_BACA = "https://docs.google.com/spreadsheets/d/1eBL-357PBj2LgpZfD-lBk-pcVSYHC_u8dZpethZqZwA/edit?usp=sharing"
 
 st.subheader("📋 Ringkasan Data & Grafik")
 
