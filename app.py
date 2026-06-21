@@ -2,16 +2,17 @@ import streamlit as st
 import pandas as pd
 import requests
 
-# === 1. TEMPEL SEMUA LINK ANDA DI SINI ===
-# Ikuti instruksi pada bagian balasan untuk mendapatkan link ini.
+# 1. PENGATURAN LOGO DAN BANNER
+LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/logoGU.png"
+BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/main/bannerGU.png"
 
-# Menggunakan link langsung dari repository GitHub Anda
-LOGO_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/blob/main/logoGU.png"
-BANNER_URL = "https://raw.githubusercontent.com/luvianoariza-source/gerak-usahaa/blob/main/bannerGU.png"
+# Menampilkan Logo sebagai ikon browser
+st.set_page_config(page_title="Gerak Usaha", page_icon=LOGO_URL, layout="wide")
 
-# Pastikan bagian st.image di bawah ini sudah tertulis seperti ini:
+# Menampilkan Banner Utama
 st.image(BANNER_URL, use_column_width=True)
 
+# (Lanjutkan dengan kode form dan lainnya seperti biasa...)
 # Tempel Link URL Aplikasi Web (dari Apps Script) di sini:
 URL_SIMPAN_DATA = "https://script.google.com/macros/s/AKfycbzX7JBZSHW-ddSs2ago_fYYX8l4R4jGYsS3x2VqbLfT4HZI5uevq522KQj656UatlkAUQ/exec"
 
