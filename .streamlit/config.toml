@@ -1,15 +1,10 @@
 [theme]
-# Mengatur agar tema dasarnya selalu terang
 base="light"
-
-# Warna utama (Cyan/Aqua dari logo)
-primaryColor="#16dbba"
-
-# Warna latar belakang utama aplikasi (Putih murni)
-backgroundColor="#ffffff"
-
-# Warna latar belakang area form (Sangat cerah dengan sentuhan cyan)
-secondaryBackgroundColor="#e6fcf9"
-
-# Warna teks utama (Biru dongker dari teks logo)
-textColor="#011f4b"
+# Warna Tosca yang lebih gelap/elegan
+primaryColor="#0d9488" 
+# Latar belakang putih dengan sedikit sentuhan abu-abu sangat muda
+backgroundColor="#f8fafc"
+# Warna kotak input/card
+secondaryBackgroundColor="#ffffff"
+# Warna teks biru gelap agar kontras
+textColor="#0f172a"
